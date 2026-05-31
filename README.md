@@ -30,10 +30,15 @@ Validate the HTML and CSS code
 Publish the website in the given URL.
 
 ## PROGRAM<!DOCTYPE html>
+## GALLERY.HTML
 '''
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Photo Gallery</title>
+
     <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
@@ -45,11 +50,13 @@ Publish the website in the given URL.
         <button class="btn" onclick="prevImage()">❮</button>
 
         <div class="gallery">
-            <img src="images/img1.png" class="gallery-img active" alt="Image 1">
-            <img src="images/img2.png" class="gallery-img" alt="Image 2">
-            <img src="images/img3.png" class="gallery-img" alt="Image 3">
-            <img src="images/img4.png" class="gallery-img" alt="Image 4">
-            <img src="images/img5.png" class="gallery-img" alt="Image 5">
+
+            <img src="images/img1.png" class="gallery-img active">
+            <img src="images/img2.png" class="gallery-img">
+            <img src="images/img3.png" class="gallery-img">
+            <img src="images/img4.png" class="gallery-img">
+            <img src="images/img5.png" class="gallery-img">
+
         </div>
 
         <button class="btn" onclick="nextImage()">❯</button>
@@ -60,7 +67,9 @@ Publish the website in the given URL.
 
 </body>
 </html>
-
+'''
+## GALLERY.CSS
+'''
 body{
     margin:0;
     padding:0;
@@ -104,7 +113,7 @@ h1{
 
 .btn{
     background:#222;
-    color:yellow;
+    color:white;
     border:none;
     padding:15px 22px;
     font-size:30px;
@@ -114,14 +123,18 @@ h1{
 }
 
 .btn:hover{
-    background:blueviolet;
+    background:orange;
 }
+'''
+## GALLERY.JS
+'''
 let images = document.querySelectorAll(".gallery-img");
 
 let current = 0;
 
 function showImage(index){
-    images.forEach((img) => {
+
+    images.forEach((img)=>{
         img.classList.remove("active");
     });
 
@@ -129,6 +142,7 @@ function showImage(index){
 }
 
 function nextImage(){
+
     current++;
 
     if(current >= images.length){
@@ -139,6 +153,7 @@ function nextImage(){
 }
 
 function prevImage(){
+
     current--;
 
     if(current < 0){
@@ -148,9 +163,9 @@ function prevImage(){
     showImage(current);
 }
 
-setInterval(() => {
+setInterval(()=>{
     nextImage();
-}, 3000);
+},3000);
 '''
 ## OUTPUT
 <img width="1920" height="1080" alt="Screenshot (51)" src="https://github.com/user-attachments/assets/76dfb2c8-527a-4ed7-bb95-61b0c3ba8075" />
