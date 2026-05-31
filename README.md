@@ -68,7 +68,8 @@ Publish the website in the given URL.
 </body>
 </html>
 '''
-## GALLERY.CSS
+
+## GALLERY CSS
 '''
 body{
     margin:0;
